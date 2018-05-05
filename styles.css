@@ -6,8 +6,8 @@ body {
 }
 
 body div a img {
-    width:50px;
     height: 50px;
+    width: auto;
 }
 
 div ul {
@@ -28,8 +28,8 @@ header div p {
     margin: 50px 0px 0px 0px;
     font-family: 'Trebuchet MS';
     font-size: 100px;
-    font-color: gold;
 }
+div #img
 
 div p {
     font-family: Verdana;
@@ -53,6 +53,12 @@ div p {
     margin: 0px 0px 50px 0px;
 }
 
+.container .row .col-2 .col-md-6 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
 footer {
     background-size: cover;
     margin: 150px 0px 0px 0px
@@ -61,4 +67,9 @@ footer {
 footer div p {
     text-align: center;
     clear: both;
+}
+
+#beer-logo {
+    width: 100%;
+    height: auto;
 }
