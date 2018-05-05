@@ -19,3 +19,15 @@
     margin-top: 10px;
    justify-content: center;
 }
+
+body {
+    color: white; 
+    background-image: url(./img/beerbackground.jpg); 
+    background-position: center top;  
+    background-repeat: no-repeat;     
+}
+
+nav img {
+    height: 50px;
+    width: auto;
+}
