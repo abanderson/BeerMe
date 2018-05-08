@@ -60,8 +60,9 @@ class Api {
                 
                 // Clean up the list by making sure the brewery search string
                 // matches the name of the brewery returned with each beer object
+                // and that the beer is currently available
                 beerList = beerList.filter(function(beerObj) {
-                    return beerObj.brewery_name === brewery;
+                    return (beerObj.brewery_name === brewery) && (beerObj.retired === false);
                 });
                 resolve(beerList);
             })
