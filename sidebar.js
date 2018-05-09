@@ -1,13 +1,12 @@
 class SideBar {
-    constructor(beerList) {
-        this.beerList = beerList;
+    constructor() {
         this.searchResults = $('.search-results');
     }
 
-    renderSideBar() {
+    renderSideBar(beerList) {
         let sideBarHTML = "";
 
-        this.beerList.forEach(function(beer){
+        beerList.forEach(function(beer){
             let beerObject = new Beers(beer);
                 
             sideBarHTML += beerObject.renderBeers();
