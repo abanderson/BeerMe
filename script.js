@@ -1,6 +1,7 @@
 $(function() {
-    let api = new Api(33.748, -84.392);
+    let api = new Api(33.90, -84.392);
     let sidebar = new SideBar();
+
     let breweryList = [];
     let beerList = [];
 
@@ -9,6 +10,9 @@ $(function() {
         .then(function(breweries) {
             breweryList = breweries;
             //Render Map here
+            //console.log(map);
+            let mapped = new Map(breweries);            
+            mapped.render(breweries);
             breweries.forEach(function(brewery) {
                 api.getBeersForBrewery(brewery.name)
                     .then(function(beers) {
