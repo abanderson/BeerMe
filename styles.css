@@ -5,7 +5,7 @@ body {
     background-color: lightslategray;
 }
 
-body div a img {
+body nav a img {
     height: 50px;
     width: auto;
 }
