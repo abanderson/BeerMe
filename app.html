@@ -42,12 +42,44 @@
             </div>
             <div class="col-sm-4 mt-3">
                 <form>
-                    <input class="form-control" type="search" name="beermesearch" placeholder="Search...">
+                    <input id="myInput" onkeyup="search()" class="form-control" type="search" name="beermesearch" placeholder="Find a brew...">
                 </form>
-                <div class="search-results"></div>
+                <div id="mySidebar" class="search-results"></div>
             </div>
         </div>
     </div>
+    <script>
+        function search() {
+            var input, filter, sidebar, card, td, td2;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            sidebar = document.getElementById("mySidebar");
+            card = sidebar.getElementsByClassName("beer");
+            displayBreweryArray = [];
+
+            // Loop through all sidebar cards, and hide those who don't match the search query
+            for (let i = 0; i < card.length; i++) {
+                td = card[i].getElementsByClassName("td")[0];
+                td2 = card[i].getElementsByClassName("td")[1];
+                if (td) {
+                    if (td.innerHTML.toUpperCase().indexOf(filter) > -1 || td2.innerHTML.toUpperCase().indexOf(filter) > -1 ) {
+                        card[i].style.display = "";
+                    } else {
+                        card[i].style.display = "none";
+                    };
+                };
+            };
+
+            // for (let v = 0; v < card.length; v++) {
+            //     if (card[v].style.display == "") {
+            //      console.log(card[v])
+            //     }
+                
+            // };
+            
+
+        };
+    </script>
 </body>
 
 </html>

@@ -14,4 +14,5 @@ class SideBar {
         
         this.searchResults.html(sideBarHTML);
     }
+
 }
