@@ -1,11 +1,15 @@
 $(function() {
     let api = new Api(33.90, -84.392);
+    let sidebar = new SideBar();
+
     let breweryList = [];
     let beerList = [];
+
 
     api.searchForBreweries()
         .then(function(breweries) {
             breweryList = breweries;
+            //Render Map here
             //console.log(map);
             let mapped = new Map(breweries);            
             mapped.render(breweries);
@@ -14,10 +18,11 @@ $(function() {
                     .then(function(beers) {
                         beers.forEach(function(beer) {
                             beerList.push(beer);
-                            let sidebar = new SideBar(beerList);
-                            sidebar.renderSideBar();
+                            sidebar.renderSideBar(beerList);
                         });
-                        //console.log(beerList);
+                    })
+                    .catch(function(error) {
+                        console.log(error);
                     });
             });
         })
