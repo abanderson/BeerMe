@@ -52,7 +52,8 @@ class Api {
     getBeersForBrewery(brewery) {
         return new Promise(function(resolve, reject) {
             $.ajax({
-                url: 'http://localhost:3000/beers',
+                //url: 'http://localhost:3000/beers',
+                url: 'https://afternoon-mountain-22774.herokuapp.com/beers',
                 data: {search: brewery},
             })
             .done(function(data) {
